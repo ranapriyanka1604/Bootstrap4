@@ -46,7 +46,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="myInput">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -70,8 +70,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto"
-                                data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="myInput1">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
@@ -85,7 +84,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="cancel1">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -160,7 +159,7 @@
 
                         <div class="form-group row">
                             <div class="offset-md-2 col-md-10">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary" id="cancel2">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Reserve</button>
                             </div>
                         </div>
@@ -381,6 +380,24 @@
                     $("#carouselButton").children("span").addClass('fa-pause');
                 }
             });
+        });
+        $('#loginModal').on('shown.bs.modal', function () {
+            $('#myInput').click(function () {
+                $('#loginModal').modal('hide');
+            });
+            $('#myInput1').click(function () {
+                $('#loginModal').modal('hide');
+            });
+
+        });
+        $('#reserveModal').on('shown.bs.modal', function () {
+            $('#cancel1').click(function () {
+                $('#reserveModal').modal('hide');
+            });
+            $('#cancel2').click(function () {
+                $('#reserveModal').modal('hide');
+            });
+
         });
     </script>
 
