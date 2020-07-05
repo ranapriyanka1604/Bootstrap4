@@ -34,7 +34,7 @@
                             Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                         <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
@@ -46,7 +46,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" id="myInput">&times;</button>
+                    <button type="button" class="close" id="myInput1">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="myInput1">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="myInput2">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
                         </div>
                     </form>
@@ -181,8 +181,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning" data-toggle="modal"
-                        data-target="#reserveModal">Reserve Table</a>
+                    <a role="button" class="btn btn-block nav-link btn-warning" id="reserveButton">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -381,14 +380,21 @@
                 }
             });
         });
+        $('#loginButton').on("click", function () {
+            $('#loginModal').modal('show');
+        });
         $('#loginModal').on('shown.bs.modal', function () {
-            $('#myInput').click(function () {
-                $('#loginModal').modal('hide');
-            });
+
             $('#myInput1').click(function () {
                 $('#loginModal').modal('hide');
             });
+            $('#myInput2').click(function () {
+                $('#loginModal').modal('hide');
+            });
 
+        });
+        $('#reserveButton').on("click", function () {
+            $('#reserveModal').modal('show');
         });
         $('#reserveModal').on('shown.bs.modal', function () {
             $('#cancel1').click(function () {
